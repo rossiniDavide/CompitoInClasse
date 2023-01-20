@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color Picker</title>
+        <style>
+            body {
+                background-color: #FFFFFF;
+            }
+
+            .container {
+                width: 500px;
+                margin: 0 auto;
+            }
+
+            .form-container {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Color Picker</h1>
+            <div class="form-container">
+                <form action="" method="post">
+                    <fieldset>
+                        <input type="text" name="customColor" id="customColor" placeholder="Inserisci un codice esadecimale" />
+                        <input type="submit" value="Submit" />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                let form = document.querySelector('form');
+                let input = document.querySelector('#customColor');
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    document.body.style.backgroundColor = input.value;
+                });
+            });
+        </script>
+    </body>
+</html>

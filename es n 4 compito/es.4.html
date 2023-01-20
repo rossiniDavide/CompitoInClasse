@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Verifica numero primo</title>
+        <script>
+            function verificaPrimo() {
+                var numero = document.getElementById("numero").value;
+                var primo = true;
+                for(i=2; i<numero; i++)
+                {
+                    if(numero % i == 0)
+                        primo = false;
+                }
+                if(primo)
+                    document.getElementById("risultato").innerHTML = "Il numero " + numero + " è primo";
+                else
+                    document.getElementById("risultato").innerHTML = "Il numero " + numero + " non è primo";
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Verifica numero primo</h2>
+        <form>
+            Inserisci un numero: <input id="numero" type="text" maxlength="10">
+            <input type="button" value="Verifica" onclick="verificaPrimo()">
+        </form>
+        <p id="risultato"></p>
+    </body>
+</html>

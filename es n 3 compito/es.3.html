@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Indovina il numero</title>
+</head>
+<body>
+  <h1>Indovina il numero</h1>
+  <div>
+    <input type="text" id="userInput"/>
+    <button onclick="submitNumber()">Conferma</button>
+    <button  onclick="resetGame()">Reset</button>
+  </div>
+  <div>
+    <p id="message"></p>
+  </div>
+  <script>
+    let randomNumber = Math.floor(Math.random() * 10);
+    function submitNumber(){
+      let userInput = document.getElementById('userInput').value;
+      if(userInput == randomNumber){
+        document.getElementById('message').innerHTML = "Complimenti, hai vinto!";
+      }
+      else if (userInput > randomNumber){
+        document.getElementById('message').innerHTML = "Numero troppo alto";
+      }
+      else {
+        document.getElementById('message').innerHTML = "Numero troppo basso";
+      }
+    }
+    function resetGame(){
+      randomNumber = Math.floor(Math.random() * 10);
+      document.getElementById('message').innerHTML = "";
+    }
+  </script>
+</body>
+</html>
+
